@@ -1,0 +1,24 @@
+#!groovy
+// Run docker build
+properties([disableConcurrentBuilds()])
+
+pipeline {
+    agent { 
+        label 'master'
+        }
+    triggers { pollSCM('* * * * *') }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+        timestamps()
+    }
+    stages {
+        stage("calculator compilation") {
+            steps {
+                      cd Calculator_Java
+                      mvn exec:java -Dexec.mainClass="sasha.frolov.Main"
+                      cd
+                  }                
+            }
+        }
+        
+   }
