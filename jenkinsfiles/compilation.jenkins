@@ -16,7 +16,10 @@ pipeline {
             steps {
                       cd Calculator_Java
                       mvn exec:java -Dexec.mainClass="sasha.frolov.Main"
-                      cd
+                      5
+                      4
+                      +
+                      0
                   }                
             }
         }
