@@ -6,7 +6,7 @@ pipeline {
     agent { 
         label 'master'
         }
-    triggers { pollSCM('* * * * *') }
+    // triggers { pollSCM('* * * * *') }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
@@ -14,12 +14,12 @@ pipeline {
     stages {
         stage("calculator compilation") {
             steps {
-                      cd Calculator_Java
-                      mvn exec:java -Dexec.mainClass="sasha.frolov.Main"
-                      5
-                      4
-                      +
-                      0
+                      cd Calculator_Java                    
+                  }                
+            }
+        stage("calculator compilation 2") {
+            steps {
+                      mvn exec:java -Dexec.mainClass="sasha.frolov.Main"                      
                   }                
             }
         }
