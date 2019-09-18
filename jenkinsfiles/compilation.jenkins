@@ -14,8 +14,10 @@ pipeline {
     stages {
         stage("calculator compilation") {
             steps {
-                      sh 'cd /home/sasha/Calculator_Java' 
+                      sh 'git clone https://github.com/Orfey95/Calculator_Java.git'
+                      sh 'cd Calculator_Java' 
                       sh 'mvn package' 
+                      sh 'rm -rf Calculator_Java' 
                   }                
             }
        
