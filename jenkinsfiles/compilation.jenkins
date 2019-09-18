@@ -19,7 +19,7 @@ pipeline {
             }
         stage("calculator compilation 2") {
             steps {
-                      mvn exec:java -Dexec.mainClass="sasha.frolov.Main"                      
+                      mvn package                     
                   }                
             }
         }
