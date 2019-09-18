@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage("calculator compilation") {
             steps {
-                      sh 'cd home/sasha/Calculator_Java' 
+                      sh 'cd /home/sasha/Calculator_Java' 
                       sh 'mvn package' 
                   }                
             }
