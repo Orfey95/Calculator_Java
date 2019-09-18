@@ -14,7 +14,6 @@ pipeline {
     stages {
         stage("calculator compilation") {
             steps {
-                      cd Calculator_Java  
                       mvn package 
                   }                
             }
