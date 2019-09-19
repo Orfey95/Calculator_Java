@@ -14,12 +14,9 @@ pipeline {
     stages {
         stage("calculator compilation") {
             steps {
-                sh 'whoami'
-                      sh "export JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64'"
                       sh 'rm -rf Calculator_Java'
                       sh 'git clone https://github.com/Orfey95/Calculator_Java.git'
                       sh 'cd Calculator_Java' 
-                sh 'echo $JAVA_HOME' 
                       sh 'mvn package' 
                       sh 'rm -rf Calculator_Java' 
                   }                
