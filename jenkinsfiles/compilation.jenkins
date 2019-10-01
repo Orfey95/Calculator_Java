@@ -13,26 +13,24 @@ pipeline {
     stages {
         stage("calculator compilation") {
             steps {
-			script {
-                      sh 'rm -rf Calculator_Java'
-                      sh 'git clone https://github.com/Orfey95/Calculator_Java.git'
-                      sh 'cd Calculator_Java' 
-                      sh 'mvn package' 
-                      sh 'rm -rf Calculator_Java' 
-                      if (true) {
-                        stage ('Stage 1') {
-                            telegramSend '++++'
-                        }
-                    }
-                    if (false) {
-                        stage ('Stage 2') {
-                            telegramSend '----'
-                        }
-                    }
-                  }    
+				script {
+						  sh 'rm -rf Calculator_Java'
+						  sh 'git clone https://github.com/Orfey95/Calculator_Java.git'
+						  sh 'cd Calculator_Java' 
+						  sh 'mvn package' 
+						  sh 'rm -rf Calculator_Java' 
+						  if (true) {
+								stage ('Stage 1') {
+									telegramSend '++++'
+								}
+							}
+						if (false) {
+								stage ('Stage 2') {
+									telegramSend '----'
+								}
+							}
+						}    
 				  }				  
             }
-       
         }
-        
    }
