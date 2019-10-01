@@ -21,12 +21,12 @@ pipeline {
 				sh 'rm -rf Calculator_Java' 
 				if (true) {
 					stage ('Stage 1') {
-							telegramSend '++++'
+							telegramSend 'Build Successful'
 							}
 						}
 				if (false) {
 					stage ('Stage 2') {
-							telegramSend '----'
+							telegramSend 'Build failed'
 							}
 						}
 					}    
