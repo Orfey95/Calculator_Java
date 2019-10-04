@@ -1,1 +1,0 @@
-curl -s -X POST https://api.telegram.org/bot842129271:AAFuufyQ0i7KJ4Smmye-LcLWY8xlBzuVxAk/sendMessage -d chat_id=400068569 -d text="$JOB_NAME ; $BUILD_TAG ; $BUILD_URL ; $GIT_COMMITTER_NAME ; $(curl -X POST http://192.168.2.16:8080/job/cicdwordpress/lastBuild/api/json --user cicd:114c4a03a6f8773ef434ab910f1dc7fc16) "
