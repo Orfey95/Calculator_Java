@@ -24,9 +24,7 @@ pipeline {
 							//telegramSend 'Build Successful'
 							//telegramSend 'Build details link:'
 							//telegramSend '${BUILD_URL}/consoleText'
-							telegramSend 'Build Successful
-							Build details link:'
-							${BUILD_URL}/consoleText'
+							telegramSend 'Build Successful \n Build details link: \n ${BUILD_URL}/consoleText'
 							}
 						}
 				if (false) {
