@@ -18,8 +18,7 @@ pipeline {
 				sh 'git clone https://github.com/Orfey95/Calculator_Java.git'
 				sh 'cd Calculator_Java' 
 				sh 'mvn package' 
-				sh 'rm -rf Calculator_Java' 
-				sh 'cd 1'
+				sh 'rm -rf Calculator_Java'
 				if (true) {
 					stage ('Stage 1') {
 							telegramSend 'Build Successful\ndetails by link:\n${BUILD_URL}/consoleText'
