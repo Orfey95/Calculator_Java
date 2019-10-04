@@ -21,15 +21,16 @@ pipeline {
 				
 		    }    
 				  				  
-             }
-	    
-	    stage('deploy') {
-   		if (result.equals("SUCCESS")) {
-      			telegramSend 'Build Successful, details by link:\n${BUILD_URL}/consoleText'
-   		} else {
-      			telegramSend 'Build failed, details by link:\n${BUILD_URL}/consoleText'
-   		}
-	    }
-	    
+             }  
         }
+	
+	post {
+		success {
+      		telegramSend 'Build Successful, details by link:\n${BUILD_URL}/consoleText'
+    		}	
+    		failure {
+      		telegramSend 'Build failed, details by link:\n${BUILD_URL}/consoleText'
+    		}
+  	}	
+	
    }
