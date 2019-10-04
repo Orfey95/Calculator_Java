@@ -22,11 +22,15 @@ pipeline {
 				if (true) {
 					stage ('Stage 1') {
 							telegramSend 'Build Successful'
+							telegramSend 'Build details link:'
+							telegramSend '${BUILD_URL}/consoleText'
 							}
 						}
 				if (false) {
 					stage ('Stage 2') {
 							telegramSend 'Build failed'
+							telegramSend 'Build details link:'
+							telegramSend '${BUILD_URL}/consoleText'
 							}
 						}
 					}    
