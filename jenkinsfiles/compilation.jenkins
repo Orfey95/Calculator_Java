@@ -25,7 +25,7 @@ pipeline {
 	
 	post {
 		success {
-      		telegramSend 'Build Successful, details by link:\n${BUILD_URL}/consoleText'
+      		telegramSend 'Build Successful, details by link:\n${BUILD_URL}/consoleText\n${result}'
     		}	
     		failure {
       		telegramSend 'Build failed, details by link:\n${BUILD_URL}/consoleText'
