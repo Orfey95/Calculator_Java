@@ -24,7 +24,9 @@ pipeline {
         }
 	
 	post {
-		telegramSend 'Build ${BUILD_STATUS}, details by link:\n${BUILD_URL}/consoleText'		
+		always {
+      			telegramSend 'Build ${BUILD_STATUS}, details by link:\n${BUILD_URL}/consoleText'
+   		}
   	}	
 	
    }
