@@ -25,7 +25,8 @@ pipeline {
 	
 	post {
 		always {
-      			telegramSend 'Build created by $NODE_NAME is ${BUILD_STATUS}, details by link:\n${BUILD_URL}/consoleText'
+      			telegramSend 'Build ${BUILD_STATUS}, details by link:\n${BUILD_URL}/consoleText'
+			telegramSend 'created by $NODE_NAME is' 
    		}
   	}	
 	
