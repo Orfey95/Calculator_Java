@@ -18,7 +18,6 @@ pipeline {
 				sh 'cd Calculator_Java' 
 				sh 'mvn package' 
 				sh 'rm -rf Calculator_Java'
-		    sh 'cd 1'
 		    }    
 				  				  
              }  
