@@ -3,9 +3,7 @@
 properties([disableConcurrentBuilds()])
 
 pipeline {
-    agent { 
-        label 'ubuntu_slave1'
-        }
+    agent {  label 'ubuntu_slave1' }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
@@ -16,16 +14,24 @@ pipeline {
 				sh 'rm -rf Calculator_Java'
 				sh 'git clone https://github.com/Orfey95/Calculator_Java.git'
 				sh 'cd Calculator_Java' 
-				sh 'mvn package' 
-				sh 'rm -rf Calculator_Java'
-		    }    
+		    		sh 'mvn compile' 
+		    } 
 				  				  
              }  
+	    
+	    stage("calculator tests") {
+            steps {
+				sh 'mvn surefire:test'
+		    		sh 'mvn sonar:sonar'
+		   } 
+				  				  
+             }
+	    
         }
 	
 	post {
 		always {
-      			telegramSend 'Build ${BUILD_STATUS}, details by link:\n${BUILD_URL}/consoleText'			 
+      			telegramSend 'Build ${BUILD_STATUS}, details by link:\n${BUILD_URL}/consoleText\nSonarCube report by link:\nhttp://192.168.0.100:9000/dashboard?id=sasha%3Acalculator'			 
    		}
   	}	
 	
