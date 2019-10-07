@@ -1,0 +1,55 @@
+#!groovy
+// Run docker build
+properties([disableConcurrentBuilds()])
+
+pipeline {
+    agent none
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+        timestamps()
+    }
+    stages {
+	    
+	stage("create slave") {
+		agent { 
+        		       label 'master'
+       		      }
+            steps {
+				sh 'docker run -d  --name jenkins_slave frolovaleksandr/jenkins-ssh-maven:v1 "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOcX3+8SxafgLmkpQGTL/vCdq06yelU8Jp7F+Bl7D0F+ieeDxTxirojTvgms/VqAkmsNJRolnBWWzKfmtMkiDia2XMBFTvn7STPCmpRsx+1A6aEZ6GxNydSg68Z8E3Fw5zaHVwdLODALWxCp264YuYsKItZrKWc04YmjW6mGI6S+CYIEG1t6TXgpJSNGCqYHtoFcY7DzmN6XwRTnISy/Cjh4Qt/H2GzXT6cK42ePXdNvHYAYWacOTaR3IhpowmoQl3UFZO20HaDtCr3UfID0KR13a4f8HpHD0o+TNjuOLptgObiGLB5pj8m1R4p7fXq9y/JErfmJF4zaAw47DAFEyv sasha@devops"'			
+		    }    
+				  				  
+             }     
+	    
+        stage("calculator compilation") {
+		agent { 
+        		       label 'ubuntu_slave1'
+       		      }
+            steps {
+				sh 'rm -rf Calculator_Java'
+				sh 'git clone https://github.com/Orfey95/Calculator_Java.git'
+				sh 'cd Calculator_Java' 
+				sh 'mvn package' 
+				sh 'rm -rf Calculator_Java'
+		    }    
+				  				  
+             }  
+	    
+	    stage("kill slave") {
+		agent { 
+        		       label 'master'
+       		      }
+            steps {
+				sh 'docker stop jenkins_slave'	
+		    	        sh 'docker rm jenkins_slave'
+		    }    
+				  				  
+             } 
+        }
+	
+	post {
+		always {
+      			telegramSend 'Build ${BUILD_STATUS}, details by link:\n${BUILD_URL}/consoleText'			 
+   		}
+  	}	
+	
+   }
