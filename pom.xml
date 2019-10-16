@@ -50,6 +50,9 @@
           		           <mainClass>sasha.frolov.Main</mainClass>
        				 </manifest>
      			     </archive>
+				<descriptorRefs>
+        			   <descriptorRef>test</descriptorRef>
+     			        </descriptorRefs>
    			 </configuration>
   			</plugin>
 			
