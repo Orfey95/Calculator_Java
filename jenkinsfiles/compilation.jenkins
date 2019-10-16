@@ -23,6 +23,7 @@ pipeline {
             steps {
 				sh 'mvn surefire:test'
 		    		sh 'mvn sonar:sonar'
+		    		sh 'ls Calculator_Java/target/'
 		   } 
 				  				  
              }
