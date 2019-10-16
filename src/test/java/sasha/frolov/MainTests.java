@@ -1,6 +1,6 @@
 package test.java.sasha.frolov;
 
-import main.java.sasha.frolov.Main;
+import sasha.frolov.Main;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
