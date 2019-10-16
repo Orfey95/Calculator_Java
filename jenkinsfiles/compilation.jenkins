@@ -14,7 +14,7 @@ pipeline {
 				sh 'rm -rf Calculator_Java'
 				sh 'git clone https://github.com/Orfey95/Calculator_Java.git'
 				sh 'cd Calculator_Java' 
-		    		sh 'mvn compile' 
+		    		sh 'mvn clean compile assembly:single' 
 		    } 
 				  				  
              }  
