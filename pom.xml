@@ -41,6 +41,18 @@
 	
 	<build>
 		<plugins>
+			
+			<plugin>
+    			   <artifactId>maven-assembly-plugin</artifactId>
+    			   <configuration>
+      		              <archive>
+       				 <manifest>
+          		           <mainClass>sasha.frolov.Main</mainClass>
+       				 </manifest>
+     			     </archive>
+   			 </configuration>
+  			</plugin>
+			
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
