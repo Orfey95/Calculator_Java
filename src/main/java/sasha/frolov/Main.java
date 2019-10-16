@@ -1,4 +1,4 @@
-package sasha.frolov;
+package main.java.sasha.frolov;
 import java.util.Scanner;
 
 public class Main {
