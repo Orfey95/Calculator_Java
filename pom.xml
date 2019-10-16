@@ -57,7 +57,7 @@
                             <archive>
                               <manifest>
                                   <addClasspath>true</addClasspath>
-                                  <mainClass>src.main.java.sasha.frolov.Main</mainClass>
+                                  <mainClass>sasha.frolov.MainClass</mainClass>
                               </manifest>
                            </archive>
                           </configuration>
