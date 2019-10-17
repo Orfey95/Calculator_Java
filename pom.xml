@@ -11,14 +11,13 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
-		<junit.jupiter.version>5.5.2</junit.jupiter.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<version>${junit.jupiter.version}</version>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.5.2</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -41,7 +40,7 @@
 	
 	<build>
 		<plugins>
-			
+			// Assemblier
 			<plugin>
     			   <artifactId>maven-assembly-plugin</artifactId>
     			   <configuration>
@@ -55,10 +54,15 @@
                              </descriptorRefs>
    			 </configuration>
   			</plugin>
-			
+			// Compiler
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
+			</plugin>
+			// Tests
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M3</version>
 			</plugin>
                         
 		</plugins>
