@@ -1,4 +1,4 @@
-package sasha.frolov;
+package test.java.sasha.frolov;
 
 import sasha.frolov.Main;
 
