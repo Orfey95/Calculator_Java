@@ -21,7 +21,7 @@ pipeline {
 	    
 	    stage("calculator tests") {
             steps {
-				sh 'mvn surefire:test'
+				sh 'mvn test'
 		    		sh 'mvn sonar:sonar'
 		    		sh 'mvn clean compile assembly:single'
 		    		sh 'ls ./target/'
