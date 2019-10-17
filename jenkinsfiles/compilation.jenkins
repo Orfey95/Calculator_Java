@@ -2,13 +2,13 @@
 // Run docker build
 properties([disableConcurrentBuilds()])
 def version = "calculator-1.1-SNAPSHOT"
-pipeline {def version = "calculator-1.1-SNAPSHOT"
+pipeline {def version1 = "calculator-1.1-SNAPSHOT"
     agent {  label 'ubuntu_slave1' }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
-    stages {def version = "calculator-1.1-SNAPSHOT"
+    stages {def version2 = "calculator-1.1-SNAPSHOT"
         stage("calculator compilation") {
             steps {
 				sh 'rm -rf Calculator_Java'
@@ -24,7 +24,7 @@ pipeline {def version = "calculator-1.1-SNAPSHOT"
 				sh 'mvn test'
 		    		sh 'mvn sonar:sonar'
 		    		sh 'mvn clean compile assembly:single'
-		    		sh 'echo ${version}'
+		    		sh 'echo ${version} ${version1} ${version2}'
 		                sh 'mv /home/jenkins/workspace/Lenin/target/calculator-1.1-SNAPSHOT-jar-with-dependencies.jar /home/jenkins/workspace/Lenin/target/calculator-1.1-SNAPSHOT.jar'
 		   } 
 				  				  
