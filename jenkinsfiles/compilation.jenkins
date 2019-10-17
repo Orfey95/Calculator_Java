@@ -2,13 +2,13 @@
 // Run docker build
 properties([disableConcurrentBuilds()])
 def version = "calculator-1.1-SNAPSHOT"
-pipeline {
+pipeline {def version = "calculator-1.1-SNAPSHOT"
     agent {  label 'ubuntu_slave1' }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
-    stages {
+    stages {def version = "calculator-1.1-SNAPSHOT"
         stage("calculator compilation") {
             steps {
 				sh 'rm -rf Calculator_Java'
