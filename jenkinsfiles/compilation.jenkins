@@ -1,7 +1,7 @@
 #!groovy
 // Run docker build
 properties([disableConcurrentBuilds()])
-version = 'calculator-1.1-SNAPSHOT'
+def version = 'calculator-1.1-SNAPSHOT'
 pipeline {
     agent {  label 'ubuntu_slave1' }
     options {
@@ -24,7 +24,7 @@ pipeline {
 				sh 'mvn test'
 		    		sh 'mvn sonar:sonar'
 		    		sh 'mvn clean compile assembly:single'
-		    		sh 'mv /home/jenkins/workspace/Lenin/target/version-jar-with-dependencies.jar /home/jenkins/workspace/Lenin/target/calculator-1.1-SNAPSHOT.jar'
+		    sh 'mv /home/jenkins/workspace/Lenin/target/${version}-jar-with-dependencies.jar /home/jenkins/workspace/Lenin/target/calculator-1.1-SNAPSHOT.jar'
 		   } 
 				  				  
              }
