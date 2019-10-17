@@ -1,6 +1,5 @@
-FROM ubuntu
-
-RUN apt-get update && apt-get install -y cowsay && ln -s /usr/games/cowsay /usr/bin/cowsay
-
-ENTRYPOINT ["cowsay"]
-
+FROM java:8-jdk-alpine
+COPY /home/jenkins/workspace/Lenin/target/*.jar /usr/app/
+WORKDIR /usr/app
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "calculator-1.1-SNAPSHOT.jar"]
