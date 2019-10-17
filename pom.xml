@@ -40,7 +40,7 @@
 	
 	<build>
 		<plugins>
-			// Assemblier
+			<!--  Assemblier -->
 			<plugin>
     			   <artifactId>maven-assembly-plugin</artifactId>
     			   <configuration>
@@ -54,12 +54,12 @@
                              </descriptorRefs>
    			 </configuration>
   			</plugin>
-			// Compiler
+			<!-- Compiler -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 			</plugin>
-			// Tests
+			<!-- Tests -->
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M3</version>
