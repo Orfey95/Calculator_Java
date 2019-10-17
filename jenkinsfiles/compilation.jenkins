@@ -1,7 +1,7 @@
 #!groovy
 // Run docker build
 properties([disableConcurrentBuilds()])
-def version = 'calculator-1.1-SNAPSHOT'
+def version = "calculator-1.1-SNAPSHOT"
 pipeline {
     agent {  label 'ubuntu_slave1' }
     options {
