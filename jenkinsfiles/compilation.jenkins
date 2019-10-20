@@ -25,6 +25,12 @@ pipeline {
             steps {
 				sh 'mvn test'
 		    		sh 'mvn sonar:sonar'
+		   } 
+				  				  
+             }
+	    
+	    stage("artifact assembly") {
+            steps {				
 		    		sh 'mvn clean compile assembly:single'
 		                sh 'mv /home/jenkins/workspace/Lenin/target/${version}-jar-with-dependencies.jar /home/jenkins/workspace/Lenin/target/${version}.jar'
 		    		sh 'cp /home/jenkins/workspace/Lenin/target/${version}.jar /home/jenkins/share-dir/'
