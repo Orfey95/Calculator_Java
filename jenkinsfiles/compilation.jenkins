@@ -38,6 +38,13 @@ pipeline {
 				  				  
              }
 	    
+	    stage("sending artifact") {
+            steps {				
+		    		sh 'scp /home/jenkins/workspace/Lenin/target/${version}.jar ubuntu@3.123.169.41:/home/ubuntu/artifactory'
+		   } 
+				  				  
+             }
+	    
         }
 	
 	post {
