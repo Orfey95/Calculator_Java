@@ -40,7 +40,7 @@ pipeline {
 	    
 	    stage("sending artifact") {
             steps {				
-		    		sh 'scp -v -o StrictHostKeyChecking=no /home/jenkins/workspace/Lenin/target/${version}.jar ubuntu@3.123.169.41:/home/ubuntu/artifactory'
+		    		sh 'scp StrictHostKeyChecking=no /home/jenkins/workspace/Lenin/target/${version}.jar ubuntu@3.123.169.41:/home/ubuntu/artifactory'
 		   } 
 				  				  
              }
