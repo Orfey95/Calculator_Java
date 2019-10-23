@@ -1,0 +1,11 @@
+---
+- name: Install Java
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: Updating repos
+    apt: name=* state=latest
+
+  - name: Install Java
+    apt: name=openjdk-8-jre state=present
