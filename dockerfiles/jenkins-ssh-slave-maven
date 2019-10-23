@@ -1,0 +1,5 @@
+FROM jenkinsci/ssh-slave
+LABEL MAINTAINER="Sasha Frolov"
+
+RUN apt-get update && apt-get -y install maven
+RUN mkdir /home/jenkins/share-dir/
