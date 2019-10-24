@@ -4,7 +4,7 @@
   become: yes
 
   tasks:
-  - name: install aptitude
+  - name: Install aptitude
     apt: name=aptitude force_apt_get=yes
     
   - name: Updating repos
