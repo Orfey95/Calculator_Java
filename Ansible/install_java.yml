@@ -4,6 +4,9 @@
   become: yes
 
   tasks:
+  - name: install aptitude
+    apt: name=aptitude force_apt_get=yes
+    
   - name: Updating repos
     apt: name=* state=latest
 
