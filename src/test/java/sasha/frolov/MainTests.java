@@ -4,8 +4,6 @@ import sasha.frolov.Main;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-//import org.junit.jupiter.api.DisplayName;
-//import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -55,7 +53,7 @@ public class MainTests {
     @ParameterizedTest(name = "{0} / {1} = {2}")
     @CsvSource({
             "40,    4,   10",
-            //"42424,    0,   0",
+            "182,    26,   7",
             "10,  5, 2",
             "8,  4, 2"
     })
