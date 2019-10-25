@@ -32,15 +32,15 @@ pipeline {
 	    stage("artifact assembly") {
             steps {				
 		    		sh 'mvn clean compile assembly:single'
-		                sh 'mv /home/jenkins/workspace/Lenin/target/${version}-jar-with-dependencies.jar /home/jenkins/workspace/Lenin/target/${version}.jar'
-		    		sh 'cp /home/jenkins/workspace/Lenin/target/${version}.jar /home/jenkins/share-dir/'
+		                sh 'mv /home/jenkins/workspace/EPAM-project/target/${version}-jar-with-dependencies.jar /home/jenkins/workspace/EPAM-project/target/${version}.jar'
+		    		sh 'cp /home/jenkins/workspace/EPAM-project/target/${version}.jar /home/jenkins/share-dir/'
 		   } 
 				  				  
              }
 	    
 	    stage("sending artifact") {
             steps {				
-		    		sh 'scp -o StrictHostKeyChecking=no /home/jenkins/workspace/Lenin/target/${version}.jar ubuntu@3.123.169.41:/home/ubuntu/artifactory'
+		    		sh 'scp -o StrictHostKeyChecking=no /home/jenkins/workspace/EPAM-project/target/${version}.jar ubuntu@3.123.169.41:/home/ubuntu/artifactory'
 		   } 
 				  				  
              }
