@@ -1,4 +1,4 @@
 # DevOps project
 
 
-![Drag Racing](Dragster.jpg)
+![CI/CD](images/cicd-project.png)
