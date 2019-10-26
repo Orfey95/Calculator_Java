@@ -1,3 +1,3 @@
-<center># Super-Puper-CI/CD</center>
+<center>Super-Puper-CI/CD</center>
 
 ![CI/CD](images/cicd-project.png)
