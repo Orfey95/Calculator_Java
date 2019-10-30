@@ -31,8 +31,8 @@ pipeline {
 	    stage("artifact assembly") {
             steps {				
 		    		sh 'mvn clean compile assembly:single'
-		                sh 'mv /home/jenkins/workspace/EPAM-project/target/${version}-jar-with-dependencies.jar /home/jenkins/workspace/EPAM-project/target/${version}.jar'
-		    		sh 'cp /home/jenkins/workspace/EPAM-project/target/${version}.jar /home/jenkins/share-dir/'
+		                sh 'mv /home/jenkins/workspace/EPAM-project-master-branch/target/${version}-jar-with-dependencies.jar /home/jenkins/workspace/EPAM-project-master-branch/target/${version}.jar'
+		    		sh 'cp /home/jenkins/workspace/EPAM-project/target-master-branch/${version}.jar /home/jenkins/share-dir/'
 		   } 
 				  				  
              }
