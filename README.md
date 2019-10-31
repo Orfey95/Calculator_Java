@@ -1,6 +1,6 @@
 # CI/CD for Java application
 
-![Logo](https://blog.itil.org/wp-content/uploads/2016/07/DevOps-Cycle.png)
+![Logo](images/devops.png)
 
 A Gradle plugin that allows for the execution of [JUnit 5][junit5gh] tests in Android environments using **Android Gradle Plugin 3.2.0 or later.**
 
