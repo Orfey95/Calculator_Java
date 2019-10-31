@@ -1,6 +1,6 @@
-# android-junit5 [![CircleCI](https://circleci.com/gh/mannodermaus/android-junit5/tree/master.svg?style=svg)][circleci]
+# CI/CD for Java application
 
-![Logo](.images/logo.png)
+![Logo](https://blog.itil.org/wp-content/uploads/2016/07/DevOps-Cycle.png)
 
 A Gradle plugin that allows for the execution of [JUnit 5][junit5gh] tests in Android environments using **Android Gradle Plugin 3.2.0 or later.**
 
