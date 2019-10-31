@@ -15,3 +15,8 @@ Programming tools, in addition to the Java programming language, have been used:
 - Maven;
 - JUnits
 - SonarQube.
+
+## General scheme of the project
+
+![Logo](images/cicd-project.png)
+
