@@ -1,7 +1,8 @@
-# <h1><p align="center"> CI/CD for Java application <br><br>
+# android-junit5 [![CircleCI](https://circleci.com/gh/mannodermaus/android-junit5/tree/master.svg?style=svg)][circleci]
 
-![CI/CD](images/cicd-project.png)
+![Logo](.images/logo.png)
 
+A Gradle plugin that allows for the execution of [JUnit 5][junit5gh] tests in Android environments using **Android Gradle Plugin 3.2.0 or later.**
 
 ## How?
 
