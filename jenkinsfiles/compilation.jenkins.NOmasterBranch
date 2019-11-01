@@ -13,7 +13,7 @@ pipeline {
         stage("calculator compilation") {
             steps {
 				sh 'rm -rf Calculator_Java'
-				sh 'git clone --single-branch --branch develop https://github.com/Orfey95/Calculator_Java.git'
+				sh 'git clone --branch develop https://github.com/Orfey95/Calculator_Java.git'
 				sh 'cd Calculator_Java' 
 		    		sh 'mvn compile' 
 		    } 
