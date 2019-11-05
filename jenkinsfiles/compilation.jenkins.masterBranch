@@ -7,7 +7,7 @@ pipeline {
         timestamps()
     }
      environment {
-     version = "calculator-1.2-SNAPSHOT"
+     version = "calculator-1.3-SNAPSHOT"
     }
     stages {
             stage("downloading") {
