@@ -39,7 +39,7 @@ public class MainTests {
     @ParameterizedTest(name = "{0} * {1} = {2}")
     @CsvSource({
             "4,    4,   16",
-            "1,    0,   0",
+            "1,    0,   1",
             "5,  5, 25",
             "6,  8, 48"
     })
