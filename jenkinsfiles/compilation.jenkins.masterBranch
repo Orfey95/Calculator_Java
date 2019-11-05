@@ -10,17 +10,16 @@ pipeline {
      version = "calculator-1.1-SNAPSHOT"
     }
     stages {
-            stage("calculator compilation") {
+            stage("downloading") {
             steps {
 				sh 'rm -rf Calculator_Java'
 				sh 'git clone https://github.com/Orfey95/Calculator_Java.git'
 				sh 'cd Calculator_Java' 
-		    		sh 'mvn compile' 
 		    } 
 				  				  
              }  
 	    
-	    stage("calculator tests") {
+	    stage("testing") {
             steps {
 				sh 'mvn test'
 		    		sh 'mvn sonar:sonar'
@@ -28,11 +27,18 @@ pipeline {
 				  				  
              }
 	    
-	    stage("artifact assembly") {
+	    stage("compilation") {
+            steps {
+				sh 'mvn compile'
+		   } 
+				  				  
+             }
+	    
+	    stage("assembling") {
             steps {				
 		    		sh 'mvn clean compile assembly:single'
-		                sh 'mv /home/jenkins/workspace/EPAM-project-master-branch/target/${version}-jar-with-dependencies.jar /home/jenkins/workspace/EPAM-project-master-branch/target/${version}.jar'
-		    		sh 'cp /home/jenkins/workspace/EPAM-project-master-branch/target/${version}.jar /home/jenkins/share-dir/'
+		                sh 'mv /home/jenkins/workspace/EPAM-project-NOmaster-branch/target/${version}-jar-with-dependencies.jar /home/jenkins/workspace/EPAM-project-NOmaster-branch/target/${version}.jar'
+		    		sh 'cp /home/jenkins/workspace/EPAM-project-NOmaster-branch/target/${version}.jar /home/jenkins/share-dir/'
 		   } 
 				  				  
              }
@@ -41,9 +47,6 @@ pipeline {
 	
 	post {
 		success {
-      			sh 'scp -o StrictHostKeyChecking=no /home/jenkins/workspace/EPAM-project/target/${version}.jar ubuntu@3.123.169.41:/home/ubuntu/artifactory'			 
-   		}
-		fixed {
       			sh 'scp -o StrictHostKeyChecking=no /home/jenkins/workspace/EPAM-project/target/${version}.jar ubuntu@3.123.169.41:/home/ubuntu/artifactory'			 
    		}
 		always {
