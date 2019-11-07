@@ -15,15 +15,6 @@
 		<sonar.java.libraries>target</sonar.java.libraries>
 	</properties>
 	
-	
-	<distributionManagement>
-    	<repository>
-        	<id>central</id>
-        	<name>admin</name>
-        	<url>http://35.228.201.129:8081/repository/Snapshot/</url>
-    	</repository>
-	</distributionManagement>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
