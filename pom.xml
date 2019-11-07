@@ -14,6 +14,15 @@
 		<junit.jupiter.version>5.5.2</junit.jupiter.version>
 		<sonar.java.libraries>target</sonar.java.libraries>
 	</properties>
+	
+	
+	<distributionManagement>
+    	<repository>
+        	<id>nexus</id>
+        	<name>admin</name>
+        	<url>http://35.228.201.129:8081/repository/Snapshot/</url>
+    	</repository>
+	</distributionManagement>
 
 	<dependencies>
 		<dependency>
