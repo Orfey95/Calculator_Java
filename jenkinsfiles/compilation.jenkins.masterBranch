@@ -35,12 +35,9 @@ pipeline {
              }
 	    
 	    stage("assembling") {
-            steps {				
-		    		//sh 'mvn clean compile assembly:single'
-		                //sh 'mv /home/jenkins/workspace/EPAM-project-master-branch/target/${version}-jar-with-dependencies.jar /home/jenkins/workspace/EPAM-project-master-branch/target/${version}.jar'
-		    		//sh 'cp /home/jenkins/workspace/EPAM-project-master-branch/target/${version}.jar /home/jenkins/share-dir/'
+            steps {		
 		    		sh 'mvn clean package'
-		    		//sh 'clean deploy -DaltDeploymentRepository=nexus-snapshots::default::http://35.228.201.129:8081/repository/Snapshot/'
+		    		sh 'mvn clean deploy -DaltDeploymentRepository=nexus-snapshots::default::http://35.228.201.129:8081/repository/Snapshot/'
 		   } 
 				  				  
              }
