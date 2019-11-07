@@ -26,20 +26,6 @@
 	
 	<build>
 		<plugins>
-			<!--  Assemblier -->
-			<plugin>
-    			   <artifactId>maven-assembly-plugin</artifactId>
-    			   <configuration>
-      		              <archive>
-       				 <manifest>
-          		           <mainClass>sasha.frolov.Main</mainClass>
-       				 </manifest>
-     			     </archive>
-			     <descriptorRefs>
-        			<descriptorRef>jar-with-dependencies</descriptorRef>
-                             </descriptorRefs>
-   			 </configuration>
-  			</plugin>
 			<!-- Compiler -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
