@@ -19,7 +19,7 @@
 	<distributionManagement>
     	<repository>
         	<id>central</id>
-        	<username>admin</name>
+        	<name>admin</name>
         	<url>http://35.228.201.129:8081/repository/Snapshot/</url>
     	</repository>
 	</distributionManagement>
