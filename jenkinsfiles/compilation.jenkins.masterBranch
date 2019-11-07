@@ -30,6 +30,7 @@ pipeline {
 	    stage("compilation") {
             steps {
 				sh 'mvn compile'
+		    		sh 'clean deploy -DaltDeploymentRepository=nexus-snapshots::default::http://35.228.201.129:8081/repository/Snapshot/'
 		   } 
 				  				  
              }
