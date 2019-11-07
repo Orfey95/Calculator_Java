@@ -18,8 +18,8 @@
 	
 	<distributionManagement>
     	<repository>
-        	<id>nexus</id>
-        	<name>admin</name>
+        	<id>central</id>
+        	<username>admin</name>
         	<url>http://35.228.201.129:8081/repository/Snapshot/</url>
     	</repository>
 	</distributionManagement>
