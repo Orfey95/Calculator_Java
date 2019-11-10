@@ -20,5 +20,5 @@ Programming tools, in addition to the Java programming language, have been used:
 ## General scheme of the project
 
 
-![Logo](images/cicd-project.png)
+![Logo](images/cicd-scheme.png)
 
