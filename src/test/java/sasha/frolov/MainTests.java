@@ -24,7 +24,7 @@ public class MainTests {
 
     @ParameterizedTest(name = "{0} - {1} = {2}")
     @CsvSource({
-            "5,    3,   4",
+            "5,    3,   2",
             "77,    70,   7",
             "49,  45, 4",
             "785,  45, 740"
