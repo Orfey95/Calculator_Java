@@ -37,7 +37,7 @@ pipeline {
 	    stage("assembling") {
             steps {		
 		    		sh 'mvn clean package -Dmaven.test.skip=true'
-		    		sh 'mvn clean deploy -DaltDeploymentRepository=nexus-snapshots::default::http://35.228.201.129:8081/repository/Snapshot/'
+		    		sh 'mvn clean deploy -Dmaven.test.skip=true -DaltDeploymentRepository=nexus-snapshots::default::http://35.228.201.129:8081/repository/Snapshot/'
 		   } 
 				  				  
              }
