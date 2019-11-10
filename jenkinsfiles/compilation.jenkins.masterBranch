@@ -45,9 +45,9 @@ pipeline {
         }
 	
 	post {
-		//success {
-      		//	sh 'scp /home/jenkins/workspace/EPAM-project-master-branch/target/${version}.jar ubuntu@3.123.169.41:/home/ubuntu/artifactory'			 
-   		//}
+		success {
+      			sh 'scp /home/jenkins/workspace/EPAM-project-master-branch/target/${version}.jar ubuntu@3.123.169.41:/home/ubuntu/artifactory'			 
+   		}
 		always {
       			telegramSend 'Build ${BUILD_STATUS}, details by link:\n${BUILD_URL}/consoleText\nSonarCube report by link:\nhttp://35.198.102.124:9000/dashboard?id=sasha%3Acalculator\nNexus build by link:\nhttp://35.198.102.124:8081/service/rest/repository/browse/Snapshot/sasha/calculator/'			 
    		}
