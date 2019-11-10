@@ -14,7 +14,8 @@ The basis of the project was taken Java application that implements the basic fu
 Programming tools, in addition to the Java programming language, have been used:
 - Maven;
 - JUnits;
-- SonarQube.
+- SonarQube;
+- Nexus.
 
 ## General scheme of the project
 
