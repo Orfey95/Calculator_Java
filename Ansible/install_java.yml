@@ -7,8 +7,5 @@
   - name: Install aptitude
     apt: name=aptitude force_apt_get=yes
 
-  - name: Updating cache
-    apt: update_cache=yes cache_valid_time=3600
-
   - name: Install Oracle Java 8
     apt: name=openjdk-8-jre-headless state=present
